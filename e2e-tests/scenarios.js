@@ -1,26 +1,25 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
-
 describe('my app', function() {
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to /spent when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/spent");
   });
 
 
-  describe('view1', function() {
+  describe('spent', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('index.html#/spent');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+    it('has an input attribute that accepts values', function () {
+      var input = element(by.model('money'));
+      input.sendKeys('123');
+      expect(input.getAttribute('value')).toBe('123');
     });
 
   });
