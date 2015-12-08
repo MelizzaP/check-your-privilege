@@ -9,6 +9,7 @@
     </select>
     <label>$</label>
     <input type='number' ng-model='spending.money'>
+    <input hidden type='number' ng-model='spending.time' value='{{dateTime}}'>
     <label>Privileged Purchase?</label>
     <input type='checkbox' ng-model='spending.privilege'></br>
     <button ng-click='saveData(spending)'>boom</button>
@@ -17,10 +18,22 @@
 
   <p>{{ spending }}</p>
 
-  <ul class='spent-money'>
-    <li ng-repeat='spenditure in spenditures'>
-      <span>{{spenditure.category}}</span>
-      <span>{{spenditure.money}}</span>
-    </li>
-  </ul>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>time submitted</th>
+        <th>category</th>
+        <th>money spent</th>
+        <th>privilege?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope='row' ng-repeat='spenditure in spenditures'>
+        <td>{{spenditure.time}}</td>
+        <td>{{spenditure.category}}</td>
+        <td>{{spenditure.money}}</td>
+        <td>{{spenditure.privilege}}</td>
+      </tr>
+    </tbody>
+  </table>
 </center>

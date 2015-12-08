@@ -14,11 +14,12 @@ privilegeApp.controller('SpentCtrl', ['$scope', '$http', function($scope, $http)
   $scope.dateTime = Date();
   $http.get('/app/money_spent/money_spent.json').then(function(data) {
     $scope.spenditures = data.data;
-    console.log('spenditures', $scope.spenditures);
   });
 
-  $scope.saveData = function () {
-    window.localStorage['moneySpent'] = angular.toJson(spending);
-    $scope.output = 'Ok, got it: ' + JSON.stringify($scope.spenditures);
+  $scope.saveData = function (spending) {
+    var jsonSpend = JSON.parse(angular.toJson(spending));
+    window.localStorage['moneySpent'] = jsonSpend;
+    $scope.output = 'Ok, got it: ' + JSON.stringify($scope.spending);
+    $scope.spenditures.push(jsonSpend);
     };
 }]);
