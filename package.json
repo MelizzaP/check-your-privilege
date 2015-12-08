@@ -1,10 +1,8 @@
 {
-  "name": "angular-seed",
-  "private": true,
+  "name": "Check-your-privilege",
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "description": "a spenditure tracking app for the modern douchebag",
+  "repository": "git@github.com:MelizzaP/check-your-privilege.git",
   "devDependencies": {
     "bower": "^1.3.1",
     "http-server": "^0.6.1",
