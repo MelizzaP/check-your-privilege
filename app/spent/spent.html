@@ -1,3 +1,26 @@
-$ <input ng-model='money'>
+<center ng-controller='SpentCtrl'>
+  <form>
+    <label>Category</label>
+    <select ng-model='spending.category'></br>
+      <option value='1'>1</option>
+      <option value='2'>2</option>
+      <option value='3'>3</option>
+      <option value='4'>4</option>
+    </select>
+    <label>$</label>
+    <input type='number' ng-model='spending.money'>
+    <label>Privileged Purchase?</label>
+    <input type='checkbox' ng-model='spending.privilege'></br>
+    <button ng-click='saveData(spending)'>boom</button>
+  </form>
+  <p>{{output}}</p>
 
-<p>{{ money }}</p>
+  <p>{{ spending }}</p>
+
+  <ul class='spent-money'>
+    <li ng-repeat='spenditure in spenditures'>
+      <span>{{spenditure.category}}</span>
+      <span>{{spenditure.money}}</span>
+    </li>
+  </ul>
+</center>

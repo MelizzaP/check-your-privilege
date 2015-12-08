@@ -1,5 +1,20 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<center ng-controller='SpentCtrl'>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>time submitted</th>
+        <th>category</th>
+        <th>money spent</th>
+        <th>privilege?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope='row' ng-repeat='spenditure in spenditures'>
+        <td>{{spenditure.time}}</td>
+        <td>{{spenditure.category}}</td>
+        <td>{{spenditure.money}}</td>
+        <td>{{spenditure.privilege}}</td>
+      </tr>
+    </tbody>
+  </table>
+</center>
