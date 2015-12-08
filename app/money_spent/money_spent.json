@@ -4,27 +4,31 @@
     "category": 2,
     "money": 12,
     "privilege": true,
-    "time": 1449545847599
+    "time": 1449545847599,
+    "title": "Gum"
   },
   {
     "id": 2,
     "category": 1,
     "money": 100,
     "privilege": false,
-    "time": 1449545847699
+    "time": 1449545847699,
+    "title": "Books"
   },
   {
     "id": 3,
     "category": 4,
     "money": 1,
     "privilege": true,
-    "time": 1749545847599
+    "time": 1749545847599,
+    "title": "pbr"
   },
   {
     "id": 4,
     "category": 2,
     "money": 5,
     "privilege": false,
-    "time": 1449545887599
+    "time": 1449545887599,
+    "title": "improv show"
   }
 ]

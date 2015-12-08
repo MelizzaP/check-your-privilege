@@ -1,5 +1,8 @@
 <center ng-controller='SpentCtrl'>
+  <h1>Check it, yo</h1>
   <form>
+    <label>Title</label>
+    <input ng-model='spending.title'>
     <label>Category</label>
     <select ng-model='spending.category'></br>
       <option value='1'>1</option>
@@ -21,6 +24,7 @@
   <table class='table table-bordered'>
     <thead>
       <tr>
+        <th>title</th>
         <th>time submitted</th>
         <th>category</th>
         <th>money spent</th>
@@ -28,12 +32,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr scope='row' ng-repeat='spenditure in spenditures'>
+      <tr scope='row' ng-repeat='spenditure in spenditures | filter:search | orderBy:sortBy'>
+        <td>{{spenditure.title}}</td>
         <td>{{spenditure.time}}</td>
         <td>{{spenditure.category}}</td>
         <td>{{spenditure.money}}</td>
-        <td>{{spenditure.privilege}}</td>
+        <td>{{spenditure.privilege | check}}</td>
       </tr>
     </tbody>
   </table>
+  </br>
+  Search: <input ng-model='search'>
+  Sort:
+    <select ng-model="sortBy">
+      <option value='title'>Title</option>
+      <option value='time'>Time</option>
+      <option value='category'>Category</option>
+      <option value='time'>Time</option>
+    </select>
 </center>
